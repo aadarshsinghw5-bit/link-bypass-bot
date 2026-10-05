@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: link-bypass-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: OWNER_ID
+        sync: false
+      - key: MONGO_URI
+        sync: false
+      - key: MONGO_DB
+        value: link_bypass_bot
+      - key: PORT
+        value: "10000"
